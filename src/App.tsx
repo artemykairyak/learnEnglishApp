@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {Route, Switch} from 'react-router-dom';
+import {AddWord} from "./pages/AddWord/AddWord";
+import g from './assets/styles/Main.module.scss';
+import 'antd/dist/antd.css';
+import {useSelector} from "react-redux";
+import {getIsLogged} from "./redux/selectors";
+import {Auth} from "./pages/Auth/Auth";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App: React.FC = () => {
+    const logged = useSelector(getIsLogged)
+useEffect(() => {
+    console.log(logged)
+},[logged])
+    return (
+        <div className={g.root}>
+            {logged ?
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <AddWord/>}
+                    />
+                </Switch>
+                : <Auth/>
+            }
+        </div>
+    );
 }
 
 export default App;
