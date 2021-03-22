@@ -1,0 +1,22 @@
+.error {
+  display: inline-block;
+  color: red;
+}
+
+.form {
+  margin-top: 15px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input {
+  width: 300px;
+}
+
+.btnWrapper {
+  margin-top: 15px;
+}

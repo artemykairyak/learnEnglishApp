@@ -1,17 +1,15 @@
 import {ActionsTypes} from "../store";
 
-type InitialStateType = {logged: boolean}
+const initialState = {logged: false, loading: false, errorText: ''}
 
-const initialState: InitialStateType = {logged: false}
-
-export const authReducer = (state = initialState, action: AuthActionTypes): InitialStateType => {
-    switch(action.type) {
+export const authReducer = (state = initialState, action: AuthActionTypes) => {
+    switch (action.type) {
         case "SET_IS_LOGGED":
-            console.log('here', action)
-            return {
-                ...state,
-                logged: action.isLogged
-            }
+            return {...state, logged: action.isLogged}
+        case "SET_ERROR_TEXT":
+            return {...state, errorText: action.errorText}
+        case "SET_IS_LOADING":
+            return {...state, loading: action.isLoading}
         default:
             return state
     }
@@ -20,6 +18,9 @@ export const authReducer = (state = initialState, action: AuthActionTypes): Init
 export const actions = {
     loginAC: (username: string, password: string) => ({type: 'LOGIN', username, password} as const),
     setIsLoggedAC: (isLogged: boolean) => ({type: 'SET_IS_LOGGED', isLogged} as const),
+    setLoadingAC: (isLoading: boolean) => ({type: 'SET_IS_LOADING', isLoading} as const),
+    setErrorTextAC: (errorText: string) => ({type: 'SET_ERROR_TEXT', errorText} as const),
+    checkIsLogged: () => ({type: 'CHECK_IS_LOGGED'} as const),
 }
 
 type AuthActionTypes = ActionsTypes<typeof actions>
