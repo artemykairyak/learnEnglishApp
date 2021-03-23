@@ -51,7 +51,7 @@ class API {
         return service
     }
 
-    get = (path = '', headers: any) => {
+    get = (path = '', headers?: any) => {
         const service = this.create(headers)
 
         return service.request({
@@ -74,7 +74,7 @@ class API {
             .catch(err => this.handleError(err))
     }
 
-    put = (path = '', data = {}, headers: any) => {
+    put = (path = '', data = {}, headers?: any) => {
         const service = this.create(headers)
 
         return service.request({
@@ -86,7 +86,7 @@ class API {
             .catch(err => this.handleError(err))
     }
 
-    delete = (path = '', headers: any) => {
+    delete = (path = '', headers?: any) => {
         const service = this.create(headers)
 
         return service.request({
