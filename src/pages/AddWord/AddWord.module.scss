@@ -1,0 +1,33 @@
+.addWord {
+  background: antiquewhite;
+  width: 700px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: darken(antiquewhite, 5%) 5px 5px 3px;
+}
+
+.form {
+  width: 70%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input {
+  width: 300px;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+}

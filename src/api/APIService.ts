@@ -1,9 +1,9 @@
 import axios from 'axios'
-// import {handleErrorFunc} from '../App'
 import {BASE_URL, TOKEN_NAME} from '../constants'
+import {handleGlobalError} from "../App";
 
 class API {
-    private localStorageData: string | null;
+    private readonly localStorageData: string | null;
     private url: string;
 
     constructor(localStorageData = TOKEN_NAME) {
@@ -20,8 +20,7 @@ class API {
     }
 
     handleError = (error: any) => {
-        console.log(error)
-        // handleErrorFunc(error)
+        handleGlobalError(error)
         return Promise.reject(error)
     }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Form, Input, Typography} from 'antd'
 import {useDispatch, useSelector} from "react-redux";
-import {actions} from "../../redux/auth/authReducer";
+import {authActions} from "../../redux/auth/authReducer";
 import {getAuthErrorText, getAuthLoading} from '../../redux/selectors';
 import s from './Auth.module.scss'
 
@@ -15,7 +15,7 @@ export const Auth: React.FC = () => {
     const onFinish = (values: authFormType) => {
         console.log('Success:', values);
         const {username, password} = values
-        dispatch(actions.loginAC(username, password))
+        dispatch(authActions.loginAC(username, password))
     };
 
     const onFinishFailed = (errorInfo: any) => {

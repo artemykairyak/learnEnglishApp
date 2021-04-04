@@ -1,0 +1,99 @@
+.test {
+  background: antiquewhite;
+  position: relative;
+  width: 700px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: darken(antiquewhite, 5%) 5px 5px 3px;
+}
+
+.progress {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form {
+  width: 70%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px 0;
+}
+
+.input {
+  width: 300px;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.testBtnWrapper {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 40;
+}
+
+.testBtn {
+  height: 80px !important;
+  width: 80px !important;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 30px 0;
+
+}
+
+.answerRes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.answerResTitle {
+  margin: 15px 0 !important;
+}
+
+.correctAnswerResTitle {
+  color: forestgreen !important;
+  margin-bottom: 30px !important;
+}
+
+.errorAnswerResTitle {
+  color: red !important;
+}
+
+.errorTitle, .errorVars {
+  font-size: 20px;
+}
+
+.errorVars {
+  font-weight: 500;
+  margin-bottom: 30px;
+}

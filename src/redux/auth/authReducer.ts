@@ -15,7 +15,7 @@ export const authReducer = (state = initialState, action: AuthActionTypes) => {
     }
 }
 
-export const actions = {
+export const authActions = {
     loginAC: (username: string, password: string) => ({type: 'LOGIN', username, password} as const),
     setIsLoggedAC: (isLogged: boolean) => ({type: 'SET_IS_LOGGED', isLogged} as const),
     setLoadingAC: (isLoading: boolean) => ({type: 'SET_IS_LOADING', isLoading} as const),
@@ -23,5 +23,5 @@ export const actions = {
     checkIsLogged: () => ({type: 'CHECK_IS_LOGGED'} as const),
 }
 
-type AuthActionTypes = ActionsTypes<typeof actions>
+type AuthActionTypes = ActionsTypes<typeof authActions>
 

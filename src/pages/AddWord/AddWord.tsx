@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import WordsAPI from '../../api/wordsAPI'
 import s from './AddWord.module.scss';
 import {Notification, NotificationType} from "../../components/Notification";
+import {RoundBtn} from "../../components/RoundBtn/RoundBtn";
+import {TrophyOutlined} from "@ant-design/icons/lib";
 
 export const AddWord: React.FC = () => {
     const [notification, setNotification] = useState<NotificationType>({title: '', text: '', type: "success"})
@@ -33,8 +35,8 @@ export const AddWord: React.FC = () => {
     }
 
     return (
-        <div>
-            <div className={s.form}>
+        <>
+            <div className={s.addWord}>
                 <Form
                     form={form}
                     name="addWord"
@@ -42,24 +44,28 @@ export const AddWord: React.FC = () => {
                     onFinishFailed={onFinishFailed}
                 >
                     <Form.Item
+                        className={s.inputWrapper}
                         label="Слово"
                         name="word"
                         rules={[{required: true, message: 'Введите слово'}]}
                     >
-                        <Input/>
+                        <Input className={s.input}/>
                     </Form.Item>
                     <Form.Item
+                        className={s.inputWrapper}
                         label="Переводы"
                         name="translate"
                         rules={[{required: true, message: 'Введите переводы (через запятую)'}]}
                     >
-                        <Input/>
+                        <Input className={s.input}/>
                     </Form.Item>
-                    <Button type="primary" htmlType="submit">Добавить</Button>
+                    <div className={s.btnWrapper}>
+                        <Button type="primary" htmlType="submit" className={s.addBTn}>Добавить</Button>
+                    </div>
                 </Form>
+                {isNotificationVisible && <Notification notification={notification}/>}
             </div>
-            {isNotificationVisible&& <Notification notification={notification}/>}
-
-        </div>
+            <RoundBtn icon={<TrophyOutlined/>} link={'/test'}/>
+        </>
     );
 };

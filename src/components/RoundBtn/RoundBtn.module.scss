@@ -1,0 +1,31 @@
+.testBtnWrapper {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 40;
+}
+
+.testBtn {
+  height: 80px !important;
+  width: 80px !important;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnText {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.btnIcon {
+  font-size: 32px;
+}
