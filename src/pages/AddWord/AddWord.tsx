@@ -5,6 +5,7 @@ import s from './AddWord.module.scss';
 import {Notification, NotificationType} from "../../components/Notification";
 import {RoundBtn} from "../../components/RoundBtn/RoundBtn";
 import {TrophyOutlined} from "@ant-design/icons/lib";
+import {log} from "util";
 
 export const AddWord: React.FC = () => {
     const [notification, setNotification] = useState<NotificationType>({title: '', text: '', type: "success"})
